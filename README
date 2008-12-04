@@ -1,0 +1,43 @@
+CAIRO INTERFACE FOR GAMBIT-C					-*- outline -*-
+
+
+* Disclaimer
+
+This is a cairo (http://www.cairographics.org) interface for Gambit-C.
+This works for me. It has been tested only in a few number of use-cases.
+
+Many thanks to Marc Feeley for help and suggestions.
+
+
+* Installation
+
+Running "make" will build a loadable library "cairo.o1" in current directory.
+You may need to edit Makefile in order to customize include and lib paths.
+Tested with cairo 1.4.10 and libfreetype 2.3.5.
+
+
+* Documentation
+
+All functions have same interface as their C counterpart. See cairo
+documentaion.
+Support for Win32 graphics is missing.
+cairo-svg-get-versions is missing.
+
+
+* License
+
+This package is released under terms of LGPL 2.1 (see COPYNG)
+If this doesn't satisfy your requirement, feel free to conctact me.
+
+* Examples
+
+Directory "examples" contains some simple example.
+You can run example with: gsi <example-name>
+For now, all example create a .png file named as example itself.
+
+
+* Contact
+
+Comment and suggestion are welcome.
+Marco Benelli <mbenelli@yahoo.com>
+
