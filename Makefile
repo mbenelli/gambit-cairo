@@ -18,8 +18,7 @@
 
 
 # Scheme compiler options
-GAMBIT_ROOT=/usr/local/Gambit-C/current
-GSC=$(GAMBIT_ROOT)/bin/gsc
+GSC=`which gsc`
 GSC_OPTIONS= -f
 
 # C compiler options
