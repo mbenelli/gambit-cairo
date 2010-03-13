@@ -1,0 +1,19 @@
+;; cairo_subpixel_order_t
+(define CAIRO_SUBPIXEL_ORDER_DEFAULT 0)
+(define CAIRO_SUBPIXEL_ORDER_RGB 1)
+(define CAIRO_SUBPIXEL_ORDER_BGR 2)
+(define CAIRO_SUBPIXEL_ORDER_VRGB 3)
+(define CAIRO_SUBPIXEL_ORDER_VBGR 4)
+
+;; cairo_hint_style_t
+(define CAIRO_HINT_STYLE_DEFAULT 0)
+(define CAIRO_HINT_STYLE_NONE 1)
+(define CAIRO_HINT_STYLE_SLIGHT 2)
+(define CAIRO_HINT_STYLE_MEDIUM 3)
+(define CAIRO_HINT_STYLE_FULL 4)
+
+;; cairo_hint_metrics_t
+(define CAIRO_HINT_METRICS_DEFAULT 0)
+(define CAIRO_HINT_METRICS_OFF 1)
+(define CAIRO_HINT_METRICS_ON 2)
+

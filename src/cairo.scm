@@ -53,3 +53,15 @@
 (include "text-funcs.scm")
 (include "transormations-funcs.scm")
 (include "xlib-surfaces-funcs.scm")
+
+(include "context-enums.scm")
+(include "font-face-enums.scm")
+(include "font-options-enums.scm")
+(include "image-surface-enums.scm")
+(include "path-enums.scm")
+(include "pattern-enums.scm")
+(include "postscript-support-enums.scm")
+(include "surface-t-enums.scm")
+(include "svg-surfaces-enums.scm")
+(include "text-enums.scm")
+

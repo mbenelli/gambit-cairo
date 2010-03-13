@@ -1,0 +1,20 @@
+;; cairo_extend_t
+(define CAIRO_EXTEND_NONE 0)
+(define CAIRO_EXTEND_REPEAT 1)
+(define CAIRO_EXTEND_REFLECT 2)
+(define CAIRO_EXTEND_PAD 3)
+
+;; cairo_filter_t
+(define CAIRO_FILTER_FAST 0)
+(define CAIRO_FILTER_GOOD 1)
+(define CAIRO_FILTER_BEST 2)
+(define CAIRO_FILTER_NEAREST 3)
+(define CAIRO_FILTER_BILINEAR 4)
+(define CAIRO_FILTER_GAUSSIAN 5)
+
+;; cairo_pattern_type_t
+(define CAIRO_PATTERN_TYPE_SOLID 0)
+(define CAIRO_PATTERN_TYPE_SURFACE 1)
+(define CAIRO_PATTERN_TYPE_LINEAR 2)
+(define CAIRO_PATTERN_TYPE_RADIAL 3)
+
