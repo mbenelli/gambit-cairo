@@ -26,8 +26,6 @@
       (cairo-line-to cr xc yc)
       (cairo-stroke cr)
 
-      (cairo-destroy cr)
-      (cairo-surface-write-to-png surface "ex1.png")
-      (cairo-surface-destroy surface))))
+      (cairo-surface-write-to-png surface "ex1.png"))))
 
 (main)

@@ -21,8 +21,6 @@
       (cairo-set-source-surface cr image 0.0 0.0)
       (cairo-paint cr)
 
-      (cairo-destroy cr)
-      (cairo-surface-write-to-png surface "ex2.png")
-      (cairo-surface-destroy surface))))
+      (cairo-surface-write-to-png surface "ex2.png"))))
 
 (main)
