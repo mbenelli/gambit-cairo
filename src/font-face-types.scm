@@ -16,7 +16,18 @@
 ;;; License along with this library; if not, write to the Free Software
 ;;; Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+(c-declare #<<c-declare-end
+  ___SCMOBJ _cairo_free_font_face(void *p) {
+    cairo_font_face_destroy(p);
+    return ___TRU;
+  }
+c-declare-end
+)
+
 (c-define-type cairo-font-face-t (struct "cairo_font_face_t"))
-(c-define-type cairo-font-face-t* (pointer "cairo_font_face_t"))
+(c-define-type cairo-font-face-t* (pointer "cairo_font_face_t"
+					   'cairo-font-face-t
+					   "_cairo_free_font_face"))
 (c-define-type cairo-font-face-t** (pointer (pointer "cairo_font_face_t")))
 (c-define-type cairo-font-type-t int)
+

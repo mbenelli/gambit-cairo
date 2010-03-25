@@ -16,8 +16,19 @@
 ;;; License along with this library; if not, write to the Free Software
 ;;; Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+(c-declare #<<c-declare-end
+  ___SCMOBJ _cairo_free_pattern(void *p) {
+    cairo_pattern_destroy(p);
+    return ___TRU;
+  }
+c-declare-end
+)
+
+
 (c-define-type cairo-pattern-t (struct "cairo_pattern_t"))
-(c-define-type cairo-pattern-t* (pointer "cairo_pattern_t"))
+(c-define-type cairo-pattern-t* (pointer "cairo_pattern_t"
+					 'cairo-pattern-t*
+					 "_cairo_free_pattern"))
 (c-define-type cairo-pattern-t** (pointer (pointer "cairo_pattern_t")))
 (c-define-type cairo-extend-t int)
 (c-define-type cairo-filter-t int)

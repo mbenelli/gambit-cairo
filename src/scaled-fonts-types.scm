@@ -16,8 +16,19 @@
 ;;; License along with this library; if not, write to the Free Software
 ;;; Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+(c-declare #<<c-declare-end
+  ___SCMOBJ _cairo_free_scaled_font(void *p) {
+    cairo_scaled_font_destroy(p);
+    return ___TRU;
+  }
+c-declare-end
+)
+
+
 (c-define-type cairo-scaled-font-t (struct "cairo_scaled_font_t"))
-(c-define-type cairo-scaled-font-t* (pointer "cairo_scaled_font_t"))
+(c-define-type cairo-scaled-font-t* (pointer "cairo_scaled_font_t"
+					     'cairo-scaled-font-t
+					     "_cairo_free_scaled_font"))
 (c-define-type cairo-scaled-font-t** (pointer (pointer "cairo_scaled_font_t")))
 (c-define-type cairo-font-extents-t (struct "cairo_font_extents_t"))
 (c-define-type cairo-font-extents-t* (pointer "cairo_font_extents_t"))

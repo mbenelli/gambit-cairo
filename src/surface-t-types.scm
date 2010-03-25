@@ -16,8 +16,18 @@
 ;;; License along with this library; if not, write to the Free Software
 ;;; Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+(c-declare #<<c-declare-end
+  ___SCMOBJ _cairo_free_surface(void *p) {
+    cairo_surface_destroy(p);
+    return ___TRU;
+  }
+c-declare-end
+)
+
+
 (c-define-type cairo-surface-t (struct "cairo_surface_t"))
-(c-define-type cairo-surface-t* (pointer "cairo_surface_t"))
+(c-define-type cairo-surface-t* (pointer "cairo_surface_t" 'cairo-surface-t
+					 "_cairo_free_surface"))
 (c-define-type cairo-surface-t** (pointer (pointer "cairo_surface_t")))
 (c-define-type cairo-content-t int)
 (c-define-type cairo-surface-type-t int)

@@ -16,9 +16,21 @@
 ;;; License along with this library; if not, write to the Free Software
 ;;; Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
+(c-declare #<<c-declare-end
+  ___SCMOBJ _cairo_free_font_options(void *p) {
+    cairo_font_options_destroy(p);
+    return ___TRU;
+  }
+c-declare-end
+)
+
+
 (c-define-type cairo-font-options-t (struct "cairo_font_options_t"))
-(c-define-type cairo-font-options-t* (pointer "cairo_font_options_t"))
-(c-define-type cairo-font-options-t** (pointer (pointer "cairo_font_options_t")))
+(c-define-type cairo-font-options-t*
+  (pointer "cairo_font_options_t" 'cairo-font-options-t*
+    "_cairo_free_font_options"))
+(c-define-type cairo-font-options-t**
+  (pointer (pointer "cairo_font_options_t")))
 (c-define-type cairo-subpixel-order-t int)
 (c-define-type cairo-hint-style-t int)
 (c-define-type cairo-hint-metrics-t int)

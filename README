@@ -20,6 +20,10 @@ Tested with cairo 1.4.10 and libfreetype 2.3.5.
 
 All functions have same interface as their C counterpart. See cairo
 documentaion.
+
+Reference counter are handled: all *-reference and *-destroy functions are
+deprecated.
+
 Support for Win32 graphics is missing.
 cairo-svg-get-versions is missing.
 

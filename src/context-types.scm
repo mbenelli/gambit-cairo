@@ -16,8 +16,25 @@
 ;;; License along with this library; if not, write to the Free Software
 ;;; Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-(c-define-type cairo-t (struct "cairo_t"))
-(c-define-type cairo-t* (pointer "cairo_t"))
+(c-declare #<<c-declare-end
+  ___SCMOBJ _cairo_free_context(void *p) {
+    cairo_destroy(p);
+    return ___TRU;
+  }
+c-declare-end
+)
+
+(c-declare #<<c-declare-end
+  ___SCMOBJ _cairo_free_rectangle_list(void *p) {
+    cairo_destroy_rectangle_list(p);
+    return ___TRU;
+  }
+c-declare-end
+)
+
+
+(c-define-type cairo-t (struct "cairo_t")) 
+(c-define-type cairo-t* (pointer "cairo_t" 'cairo_t* "_cairo_free_context"))
 (c-define-type cairo-t** (pointer (pointer "cairo_t")))
 (c-define-type cairo-antialias-t int)
 (c-define-type cairo-fill-rule-t int)
@@ -28,5 +45,7 @@
 (c-define-type cairo-rectangle-t* (pointer "cairo_rectangle_t"))
 (c-define-type cairo-rectangle-t** (pointer (pointer "cairo_rectangle_t")))
 (c-define-type cairo-rectangle-list-t (struct "cairo_rectangle_list_t"))
-(c-define-type cairo-rectangle-list-t* (pointer "cairo_rectangle_list_t"))
+(c-define-type cairo-rectangle-list-t* (pointer "cairo_rectangle_list_t"
+						'cairo-rectangle-list-t*
+						"_cairo_free_rectangle_list"))
 (c-define-type cairo-rectangle-list-t** (pointer (pointer "cairo_rectangle_list_t")))
