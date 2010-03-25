@@ -26,7 +26,7 @@ c-declare-end
 
 (c-declare #<<c-declare-end
   ___SCMOBJ _cairo_free_rectangle_list(void *p) {
-    cairo_destroy_rectangle_list(p);
+    cairo_rectangle_list_destroy(p);
     return ___TRU;
   }
 c-declare-end
